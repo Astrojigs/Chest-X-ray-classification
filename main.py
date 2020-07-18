@@ -99,16 +99,3 @@ pred = model.predict_classes(test_image_gen)
  2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]'''
 
 print(f"classification report:\n {classification_report(test_image_gen.classes, pred)}")
-'''
-Note: Update this when training again,
-classification report:
-               precision    recall  f1-score   support
-
-           0       0.88      0.82      0.85        17
-           1       0.71      1.00      0.83        20
-           2       0.85      0.55      0.67        20
-
-    accuracy                           0.79        57
-   macro avg       0.81      0.79      0.78        57
-weighted avg       0.81      0.79      0.78        57
-'''
