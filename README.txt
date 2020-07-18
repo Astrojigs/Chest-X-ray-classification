@@ -7,8 +7,8 @@ generating_images.py
 resizing all images.py
 prediction.py
 
-In order to run the program run 'prediction.py'
-*If you want to train the model again* => uncomment the "model.save" and "model.fit" in main.py.
+In order to run the program run uncomment the "model.save" and "model.fit" in main.py. Run the main.py, once the model model is saved, you can run prediction.py
+
 prediction.py will select a random image from the folder and use the model from main.py to predict which of the three cases it will be.
 
 
