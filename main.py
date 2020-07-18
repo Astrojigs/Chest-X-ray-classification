@@ -18,7 +18,6 @@ test_path = 'Covid19-dataset/test'
 
 # number of images in training folder
 print(len(os.listdir(os.path.join(train_path, 'Covid'))))
-# number of images for Normal, Covid, Viral Pneumonia = 70,111,70
 
 # Dimensionality study
 dim1 = []
@@ -36,6 +35,7 @@ for image_name in os.listdir(os.path.join(test_path, 'Covid')):
     dim2.append(d2)
 # print(np.mean(dim1), np.mean(dim2)) = 728.2 782.6
 
+#Reshaping it to be image_shape due to GPU limit
 # Keeping dimensions of images same
 image_shape = (540, 583, 3)
 
@@ -90,12 +90,5 @@ model.summary()
 
 model = tf.keras.models.load_model('covid_pred.h5')
 pred = model.predict_classes(test_image_gen)
-# print(pred)
-'''[0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 2 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
- 1 0 1 2 2 1 2 2 1 1 2 2 1 1 2 2 2 2 2 2]'''
-
-# print(f"test image gen: {test_image_gen.classes}")
-'''test image gen: [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
- 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]'''
 
 print(f"classification report:\n {classification_report(test_image_gen.classes, pred)}")
